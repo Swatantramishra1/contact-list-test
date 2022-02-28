@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import FolderList from './components/home';
+import { CONTACT_LIST } from './data';
 
 function App() {
+
+  const list = CONTACT_LIST.sort((a,b) => a.firstName - b.firstName);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'container'}>
+      <FolderList list={list} />
     </div>
   );
 }
